@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
-import { AtButton, AtRadio, AtCard } from 'taro-ui'
+import { AtButton, AtRadio, AtCard, AtIcon } from 'taro-ui'
 import { questions, getResult } from '../../constants/questions'
 import './index.scss'
 
@@ -85,7 +85,7 @@ export default class Index extends Component<{}, State> {
               onClick={this.handlePrevious}
               className='at-button--small'
             >
-              上一题
+              <AtIcon value='chevron-left' size='20' color='#fff' /> 上一题
             </AtButton>
           </View>
           <View className='at-col at-col-6' style={{ paddingLeft: '10px' }}>
@@ -95,7 +95,7 @@ export default class Index extends Component<{}, State> {
               onClick={this.handleNext}
               className='at-button--small'
             >
-              {currentQuestion === questions.length - 1 ? '查看结果' : '下一题'}
+              <AtIcon value='chevron-right' size='20' color='#fff' /> {currentQuestion === questions.length - 1 ? '查看结果' : '下一题'}
             </AtButton>
           </View>
         </View>
