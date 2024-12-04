@@ -1,0 +1,40 @@
+/* src/pages/index/index.scss */
+.at-card__title {
+    text-align: center;
+    /* 设置标题居中 */
+    font-size: 20px;
+    /* 可根据需要调整字体大小 */
+    font-weight: bold;
+    /* 可根据需要调整字体粗细 */
+}
+
+/* src/pages/index/index.scss */
+.question-title {
+    font-size: 28px;
+    /* 调整字体大小 */
+    font-weight: bold;
+    /* 加粗字体 */
+    margin: 20px 0;
+    /* 完全垂直居中 */
+    text-align: center;
+    /* 居中对齐 */
+    display: flex;
+    /* 使用 flexbox */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: left;
+    /* 水平居中 */
+    height: 60px;
+    /* 设置高度以确保垂直居中 */
+}
+
+.radio-options .at-radio__option {
+    color: gray;
+    /* 设置选项字体颜色为灰色 */
+    font-size: 20px;
+    /* 调整选项字体大小 */
+}
+
+.button-container {
+    margin-top: 20px; /* 上方间距 */
+  }
