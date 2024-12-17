@@ -20,3 +20,5 @@ npm run dev:alipay
 
 使用微信开发者工具打开dist文件夹，进行预览和调试。
 
+### 体验码
+![小程序码](../imgs/gh_2ecdd00a7ee0_860.jpg)
