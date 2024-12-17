@@ -64,7 +64,8 @@ export default class Index extends Component<{}, State> {
         <View className='at-article__h2'>{result.title}</View>
         <View className='at-article__p'>总分：{totalScore}</View>
         <View className='at-article__p'>{result.description}</View>
-        <AtButton type='primary' onClick={() => this.setState({ isTesting: false })}>
+        <View className='spacing'></View>
+        <AtButton type='primary' size='small' onClick={() => this.setState({ isTesting: false })}>
           返回首页
         </AtButton>
       </AtCard>
@@ -116,7 +117,8 @@ export default class Index extends Component<{}, State> {
     return (
       <View className='home-page'>
         <View className='home-title'>欢迎来到恋爱脑测试</View>
-        <AtButton type='primary' onClick={this.startTest}>
+        <View className='spacing'></View>
+        <AtButton type='primary' size = 'small' onClick={this.startTest}>
           开始测试
         </AtButton>
       </View>

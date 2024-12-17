@@ -61,11 +61,28 @@
 }
 
 .at-button--small {
-  width: 100%; /* 按钮宽度 */
+  width: auto; /* 按钮宽度 */
   display: flex; /* 使用 flexbox */
   align-items: center; /* 垂直居中 */
   justify-content: center; /* 水平居中 */
   padding: 12px 0; /* 增加上下内边距以增加高度 */
   min-height: 50px; /* 设置最小高度 */
   font-size: 18px; /* 调整字体大小 */
+}
+
+.spacing {
+  margin-bottom: 20px; /* 根据需要调整间距 */
+}
+
+.home-title {
+  text-align: center; /* 文字居中 */
+  margin-bottom: 20px; /* 根据需要调整间距 */
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 子元素居中对齐 */
+  justify-content: center; /* 垂直居中 */
+  height: 100vh;
 }
