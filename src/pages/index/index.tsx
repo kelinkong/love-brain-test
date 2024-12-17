@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import { View } from '@tarojs/components'
-import { AtButton, AtRadio, AtCard, AtIcon } from 'taro-ui'
+import { AtButton, AtRadio, AtCard } from 'taro-ui'
 import { questions, getResult } from '../../constants/questions'
 import './index.scss'
 
@@ -9,6 +9,7 @@ interface State {
   answers: number[]
   showResult: boolean
   totalScore: number
+  isTesting: boolean
 }
 
 export default class Index extends Component<{}, State> {
@@ -16,7 +17,12 @@ export default class Index extends Component<{}, State> {
     currentQuestion: 0,
     answers: [],
     showResult: false,
-    totalScore: 0
+    totalScore: 0,
+    isTesting: false
+  }
+
+  startTest = () => {
+    this.setState({ isTesting: true, currentQuestion: 0, answers: [], showResult: false });
   }
 
   handleSelect = (value: string) => {
@@ -58,6 +64,9 @@ export default class Index extends Component<{}, State> {
         <View className='at-article__h2'>{result.title}</View>
         <View className='at-article__p'>总分：{totalScore}</View>
         <View className='at-article__p'>{result.description}</View>
+        <AtButton type='primary' onClick={() => this.setState({ isTesting: false })}>
+          返回首页
+        </AtButton>
       </AtCard>
     )
   }
@@ -85,7 +94,7 @@ export default class Index extends Component<{}, State> {
               onClick={this.handlePrevious}
               className='at-button--small'
             >
-              <AtIcon value='chevron-left' size='20' color='#fff' /> 上一题
+              上一题
             </AtButton>
           </View>
           <View className='at-col at-col-6' style={{ paddingLeft: '10px' }}>
@@ -95,7 +104,7 @@ export default class Index extends Component<{}, State> {
               onClick={this.handleNext}
               className='at-button--small'
             >
-              <AtIcon value='chevron-right' size='20' color='#fff' /> {currentQuestion === questions.length - 1 ? '查看结果' : '下一题'}
+              {currentQuestion === questions.length - 1 ? '查看结果' : '下一题'}
             </AtButton>
           </View>
         </View>
@@ -103,11 +112,22 @@ export default class Index extends Component<{}, State> {
     )
   }
 
-  render () {
-    const { showResult } = this.state
+  renderHomePage() {
+    return (
+      <View className='home-page'>
+        <View className='home-title'>欢迎来到恋爱脑测试</View>
+        <AtButton type='primary' onClick={this.startTest}>
+          开始测试
+        </AtButton>
+      </View>
+    )
+  }
+
+  render() {
+    const { showResult, isTesting } = this.state
     return (
       <View className='at-article'>
-        {showResult ? this.renderResult() : this.renderQuestion()}
+        {isTesting ? (showResult ? this.renderResult() : this.renderQuestion()) : this.renderHomePage()}
       </View>
     )
   }

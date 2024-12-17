@@ -8,7 +8,6 @@
     /* 可根据需要调整字体粗细 */
 }
 
-/* src/pages/index/index.scss */
 .question-title {
     font-size: 28px;
     /* 调整字体大小 */
@@ -39,10 +38,6 @@
     margin-top: 20px; /* 上方间距 */
   }
 
-.at-article {
-  margin-bottom: 20px; /* 设置与下方边缘的距离 */
-}
-
 .at-card {
   margin-bottom: 20px; /* 如果需要，可以为每个卡片设置底部边距 */
   border-radius: 10px; /* 圆角 */
@@ -70,4 +65,7 @@
   display: flex; /* 使用 flexbox */
   align-items: center; /* 垂直居中 */
   justify-content: center; /* 水平居中 */
+  padding: 12px 0; /* 增加上下内边距以增加高度 */
+  min-height: 50px; /* 设置最小高度 */
+  font-size: 18px; /* 调整字体大小 */
 }
